@@ -29,7 +29,7 @@
           <option>Country</option>
         </select>
 
-        <select class="input-medium">
+        <select ng-model="sortDirection">
           <option value="+">Descending</option>
           <option value="-">Ascending</option>
         </select>
@@ -39,7 +39,7 @@
 
     <ul>
 
-      <li ng-repeat="friend in friends | filter : filtered | filter : filter2" class='friend'>
+      <li ng-repeat="friend in friends | filter : filtered | filter : filter2 | orderBy: sortDirection + sortProp " class='friend'>
         <img class="profile-pic" ng-src="{{friend.pic_square}}" alt="" />
 
         <h3>{{friend.name}}

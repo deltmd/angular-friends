@@ -1,5 +1,7 @@
 angular.module('facebookFriends')
 .controller('mainCtrl', function($scope){
+  $scope.sortProp = "name";
+  $scope.sortDirection = "+";
   $scope.friends = [
     {
       "name": "Preston McNeil",
@@ -433,3 +435,23 @@ angular.module('facebookFriends')
     }
   ]
 });
+
+// <select class="input-medium" ng-model="sortProp">
+//   <option value="name">Name</option>
+//   <option value="friend_count">#Friends</option>
+//   <option value="current_location.city">City</option>
+//   <option value="current_location.state">State</option>
+//   <option value="current_location.country">Country</option>
+// </select>
+//
+// <select ng-model="sortDirection">
+//   <option value="+" ng-orderBy>Descending</option>
+//   <option value="-">Ascending</option>
+// </select>
+//
+// </div>
+// </form>
+//
+// <ul>
+//
+// <li ng-repeat="friend in friends | filter : filtered | filter : sortDirection + filter2 | class='friend'>
